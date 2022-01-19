@@ -16,12 +16,12 @@
 7. In ```parent.py``` add the following: 
 * modularization/parent.py
 * ```{python}if  __name__  = =  "__main__" :
-              print ( "the file is being executed directly" )
-           else :
-              print ( "The file is being executed because it is imported by another file. The file is named:" , __name__ )
+      print ( "the file is being executed directly" )
+     else :
+    print ( "The file is being executed because it is imported by another file. The file is named:" , __name__ )
   ```
 8. Now try to run the file directly. You should see the file being executed directly printed to the console. 
-9. Run hijo.pyYou should see "The file is being run because it is imported by another file. The file is named: parent
+9. Run ```hijo.py``` You should see "The file is being run because it is imported by another file. The file is named: parent
 10. How is this useful? We can use this conditional to prevent blocks of code from being executed unless the file is being executed directly. Why would we want to do this? Consider a situation where one class depends on another, such as mapping Users to Bank Accounts. In our product document, we could create a lot of test code to make sure we can create new products and execute methods. When we import products into the store file as a module, we don't want all those tests to run every time we run the store file, so inside our product document, we might have something like the following:
 * ```{python} if  __name__  = =  "__main__" : 
     product =  Product ([args])
